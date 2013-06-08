@@ -19,7 +19,7 @@ window.languageLinks = function() {
 					link.langName = wikis[link.lang].name;
 				});
 				langLinks.sort(function(l1, l2) {
-					return l1.langName.localeCompare(l2.langName);
+					return l1.langName.toLowerCase().localeCompare(l2.langName.toLowerCase());
 				});
 				$("#langList").html(template.render({langLinks: langLinks}));
 				$(".languageLink").click(onLanguageLinkClick);
